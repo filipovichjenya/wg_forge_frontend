@@ -1,8 +1,9 @@
-// this is an example of improting data from JSON
-import 'orders' from '../data/orders.json';
+import Model from './model';
+import View from './view';
+import Controller from './controller';
+import PubSub from './pubsub';
+
 
 export default (function () {
-    // YOUR CODE GOES HERE
-    // next line is for example only
-    document.getElementById("app").innerHTML = "<h1>Hello WG Forge</h1>";
+   new Controller(new Model(new PubSub), new View(document.getElementById('app')));   
 }());
